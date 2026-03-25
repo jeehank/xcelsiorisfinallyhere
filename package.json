@@ -36,6 +36,7 @@
     "eslint": "^9.39.4",
     "eslint-plugin-react-hooks": "^7.0.1",
     "globals": "^17.4.0",
-    "prisma": "^7.5.0"
+    "prisma": "^7.5.0",
+    "typescript": "6.0.2"
   }
 }
