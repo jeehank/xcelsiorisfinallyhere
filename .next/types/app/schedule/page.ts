@@ -1,4 +1,4 @@
-// File: C:\Users\jeeha\Desktop\xcelsiormaskwebsite\app\schedule\page.jsx
+// File: C:\Users\user\Documents\GitHub\xcelsiorisfinallyhere\app\schedule\page.jsx
 import * as entry from '../../../../app/schedule/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

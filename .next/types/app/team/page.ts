@@ -1,4 +1,4 @@
-// File: C:\Users\jeeha\Desktop\xcelsiormaskwebsite\app\team\page.jsx
+// File: C:\Users\user\Documents\GitHub\xcelsiorisfinallyhere\app\team\page.jsx
 import * as entry from '../../../../app/team/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

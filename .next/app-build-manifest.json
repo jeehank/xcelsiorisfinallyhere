@@ -12,10 +12,11 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-    "/about/page": [
+    "/register/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/about/page.js"
+      "static/css/app/register/page.css",
+      "static/chunks/app/register/page.js"
     ],
     "/schedule/page": [
       "static/chunks/webpack.js",
@@ -28,11 +29,10 @@
       "static/chunks/main-app.js",
       "static/chunks/app/team/page.js"
     ],
-    "/register/page": [
+    "/about/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/register/page.css",
-      "static/chunks/app/register/page.js"
+      "static/chunks/app/about/page.js"
     ]
   }
 }
