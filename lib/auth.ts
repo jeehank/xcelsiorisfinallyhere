@@ -2,6 +2,7 @@
 import { betterAuth } from "better-auth";
 import { admin } from "better-auth/plugins"
 import { username } from "better-auth/plugins"
+import { nextCookies } from "better-auth/next-js"
 
 
 
@@ -20,7 +21,8 @@ export const auth = betterAuth({
         admin({
             adminUserIds: ["GG2CT4PDSxEfbMXI29fq8qytA8EYvtls"], // Array of user IDs that should have admin access
         }),
-        username()
+        username(),
+        nextCookies()
     ]
     
 });
