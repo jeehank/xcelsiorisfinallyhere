@@ -1,13 +1,18 @@
 "use client";
 import React, { useRef, useEffect, useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter, usePathname, redirect } from 'next/navigation';
 import gsap from 'gsap';
 import './GooeyNav.css';
+import { authClient } from '../../lib/auth-client';
+
+
 
 const GooeyNav = ({
   items,
   initialActiveIndex = 0,
 }) => {
+  
+  const {data:session, refetch}=authClient.useSession()
   const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
   const indicatorRef = useRef(null);
   const containerRef = useRef(null);
@@ -48,6 +53,11 @@ const GooeyNav = ({
     router.push(href);
   };
 
+  const handleLogout=async ()=>{
+    await authClient.signOut();
+    refetch();
+  }
+
   return (
     <div className="gooey-nav-container">
       <nav className="gooey-nav" ref={containerRef}>
@@ -68,9 +78,20 @@ const GooeyNav = ({
 
       
       <div className="nav-right">
-        <button className="nav-registration-btn" onClick={() => router.push('/register')}>
-          Register Now
-        </button>
+        {
+          (!session)?
+            <button className="nav-registration-btn" onClick={() => redirect('/register')}>
+              Register Now
+            </button>
+          
+          :
+            <button className="nav-registration-btn" onClick={handleLogout}>
+              Logout
+            </button>
+            
+          
+        }
+        
       </div>
     </div>
   );

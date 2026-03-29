@@ -9,7 +9,7 @@ const page = async () => {
         headers: await headers()
     })
     if (!sess) {
-        redirect('/admin/login')
+        redirect('/register')
     }
     
     return (

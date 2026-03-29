@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import '../../src/css/Registration.css';
 
+import {signIn} from '../../lib/actions/authActions'
+
 export default function Registration() {
   const cardRef = useRef(null);
 
@@ -50,14 +52,14 @@ export default function Registration() {
             <h3>SYSTEM ACCESS</h3>
             <p>Enter credentials to register</p>
           </div>
-          <form className="reg-form" onSubmit={(e) => e.preventDefault()}>
+          <form className="reg-form" /*onSubmit={(e) => e.preventDefault()}*/ action={signIn}>
             <div className="input-group">
-              <input type="text" id="username" placeholder=" " required />
-              <label htmlFor="username">USERNAME</label>
+              <input type="text" name="username" placeholder=" " required />
+              <label>USERNAME</label>
             </div>
             <div className="input-group">
-              <input type="password" id="password" placeholder=" " required />
-              <label htmlFor="password">PASSWORD</label>
+              <input type="password" name="password" placeholder=" " required />
+              <label>PASSWORD</label>
             </div>
             <button type="submit" className="btn-magnetic">
               ACCESS TERMINAL

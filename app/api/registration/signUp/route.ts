@@ -5,7 +5,6 @@ import { prismaClient } from '../../../../lib/prisma';
 import {headers} from 'next/headers'
 
 
-
 export async function POST(request: NextRequest) {
     const sess=await auth.api.getSession({
         headers: await headers()
@@ -16,7 +15,9 @@ export async function POST(request: NextRequest) {
     }
     
 
-    const { name, email, password, username } = await request.json();
+    const {password, username } = await request.json();
+    const name=username
+    const email=username.append('@gmail.com')
     let data:any
     try{
         data = await auth.api.signUpEmail({
