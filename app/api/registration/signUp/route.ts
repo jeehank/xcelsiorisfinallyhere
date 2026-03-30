@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
 
     const {password, username } = await request.json();
     const name=username
-    const email=username.append('@gmail.com')
+    const email=username.concat('@gmail.com')
     let data:any
     try{
         data = await auth.api.signUpEmail({

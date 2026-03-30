@@ -1,17 +1,17 @@
 'use client'
 
 import { useActionState } from "react"; // Next.js 15+ (or useFormStatus in 14+)
-import { addSchool } from "../../../lib/actions/adminActions"; // Adjust path to your server action
+import { removeSchool } from "../../../lib/actions/adminActions"; // Adjust path to your server action
 
-export default function RegisterForm(){
-  const [state, formAction, isPending] = useActionState<Promise<{message:string, status:string}>|null, FormData>(addSchool, { message: "", status: '' });
+export default function RemoveForm(){
+    const [state, formAction, isPending] = useActionState<Promise<{message:string, status:string}>|null, FormData>(removeSchool, { message: "", status: '' });
 
   return (
     <div className="mt-8">
         <form action={formAction} style={{ maxWidth: "400px", margin: "0 auto", padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <h2>Register</h2>
+        <h2>Remove accounts:</h2>
         <input name="username" type="text" placeholder="Username" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
-        <input name="password" type="password" placeholder="Password" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
+        <label>Username</label>
         <button 
           type="submit" 
           disabled={isPending}
@@ -37,4 +37,5 @@ export default function RegisterForm(){
 
     
   );
-};
+}
+

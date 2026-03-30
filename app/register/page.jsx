@@ -52,7 +52,7 @@ export default function Registration() {
             <h3>SYSTEM ACCESS</h3>
             <p>Enter credentials to register</p>
           </div>
-          <form className="reg-form" /*onSubmit={(e) => e.preventDefault()}*/ action={signIn}>
+          <form className="reg-form" action={signIn}>
             <div className="input-group">
               <input type="text" name="username" placeholder=" " required />
               <label>USERNAME</label>

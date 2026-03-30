@@ -3,7 +3,7 @@
     "7ffdf6acefa1a5cdb9059092ae9778b91634ca05e4": {
       "workers": {
         "app/admin/add-school/page": {
-          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%2C%5B%7B%22id%22%3A%227ffdf6acefa1a5cdb9059092ae9778b91634ca05e4%22%2C%22exportedName%22%3A%22addSchool%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%2C%5B%7B%22id%22%3A%227f0f509218665fc860df56c75fef89b111563f7f56%22%2C%22exportedName%22%3A%22removeSchool%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%7D%2C%7B%22id%22%3A%227ffdf6acefa1a5cdb9059092ae9778b91634ca05e4%22%2C%22exportedName%22%3A%22addSchool%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
           "async": false
         }
       },
@@ -25,6 +25,19 @@
       },
       "filename": "../C:\\Users\\user\\Documents\\GitHub\\xcelsiorisfinallyhere\\lib\\actions\\authActions.ts",
       "exportedName": "signIn"
+    },
+    "7f0f509218665fc860df56c75fef89b111563f7f56": {
+      "workers": {
+        "app/admin/add-school/page": {
+          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%2C%5B%7B%22id%22%3A%227f0f509218665fc860df56c75fef89b111563f7f56%22%2C%22exportedName%22%3A%22removeSchool%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%7D%2C%7B%22id%22%3A%227ffdf6acefa1a5cdb9059092ae9778b91634ca05e4%22%2C%22exportedName%22%3A%22addSchool%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CadminActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/add-school/page": "action-browser"
+      },
+      "filename": "../C:\\Users\\user\\Documents\\GitHub\\xcelsiorisfinallyhere\\lib\\actions\\adminActions.ts",
+      "exportedName": "removeSchool"
     }
   },
   "edge": {},
