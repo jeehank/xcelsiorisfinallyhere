@@ -16,7 +16,11 @@ export async function POST(request: NextRequest) {
     
 
     const {password, username } = await request.json();
+    if (!password || !username) {
+        return NextResponse.json({message: "Username and password are required"}, {status: 422})
+    }
     const name=username
+
     const email=username.concat('@gmail.com')
     let data:any
     try{

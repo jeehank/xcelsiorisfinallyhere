@@ -17,6 +17,13 @@ export const auth = betterAuth({
     emailAndPassword: {
         enabled: true,
     },
+    session: {
+		cookieCache: {
+			enabled: true,
+			maxAge: 15 * 60, // 15 minutes
+			strategy: "jwt" // Use JWT format
+		}
+	},
     plugins: [
         admin({
             adminUserIds: ["GG2CT4PDSxEfbMXI29fq8qytA8EYvtls"], // Array of user IDs that should have admin access

@@ -16,5 +16,5 @@ export async function signIn(formData: FormData) {
         headers: await headers()
     })
 
-    redirect("/session")
+    redirect("/")
 }

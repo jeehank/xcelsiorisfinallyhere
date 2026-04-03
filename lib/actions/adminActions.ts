@@ -32,7 +32,7 @@ async function addSchool(prevState: { message: string; status: string } | null, 
 }
 
 async function removeSchool(prevState: { message: string; status: string } | null, form:FormData):Promise<{message:string, status:string}> {
-    const username=form.get('username') as string
+    const userId=form.get('userId') as string
     const session=await auth.api.getSession({
         headers: await headers()
     })
@@ -41,6 +41,21 @@ async function removeSchool(prevState: { message: string; status: string } | nul
             return {message: "Come back as admin", status: 'error'}
     }
 
+    try{
+        if (!userId){
+            return {message:'User ID is required', status:'error'}
+        }
+        const data=await auth.api.removeUser({
+            body:{
+                userId
+            },
+            headers: await headers()
+        });
+    }catch{
+        return {message:'Something went wrong', status:'error'}
+    }
+
+        
     return {message:'Account removed successfully', status:'success'}
 }
 

@@ -10,8 +10,8 @@ export default function RemoveForm(){
     <div className="mt-8">
         <form action={formAction} style={{ maxWidth: "400px", margin: "0 auto", padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
         <h2>Remove accounts:</h2>
-        <input name="username" type="text" placeholder="Username" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
-        <label>Username</label>
+        <input name="userId" type="text" placeholder="User ID" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
+        <label>User ID</label>
         <button 
           type="submit" 
           disabled={isPending}
@@ -25,7 +25,7 @@ export default function RemoveForm(){
             fontWeight: 600 
           }}
         >
-          {isPending ? "Signing Up..." : "Sign Up"}
+          {isPending ? "Removing Account..." : "Remove Account"}
         </button>
         {state.message && (
           <p style={{ color: state.status === "success" ? "green" : "red", margin: 0 }}>

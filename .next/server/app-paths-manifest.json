@@ -1,7 +1,6 @@
 {
-  "/admin/add-school/page": "app/admin/add-school/page.js",
-  "/team/page": "app/team/page.js",
-  "/schedule/page": "app/schedule/page.js",
+  "/api/auth/[...all]/route": "app/api/auth/[...all]/route.js",
   "/session/page": "app/session/page.js",
+  "/page": "app/page.js",
   "/register/page": "app/register/page.js"
 }
