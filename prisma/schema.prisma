@@ -12,6 +12,30 @@ datasource db {
   provider = "postgresql"
 }
 
+model Event {
+  id           String        @id
+  name         String
+  dt           DateTime
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  details      String[]      @default([])
+  participants Participant[]
+  location     String
+  NOP          Int           @default(2)
+}
+
+model Participant {
+  id        String   @id
+  name      String
+  number    String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  school    User     @relation(fields: [userId], references: [id])
+  event     Event[]
+  userId    String
+}
+
+//AUTH GENERATED MODELS
 model User {
   id            String    @id
   name          String
@@ -23,7 +47,16 @@ model User {
   sessions      Session[]
   accounts      Account[]
 
+  role            String?
+  banned          Boolean?      @default(false)
+  banReason       String?
+  banExpires      DateTime?
+  username        String?
+  displayUsername String?
+  participants    Participant[]
+
   @@unique([email])
+  @@unique([username])
   @@map("user")
 }
 

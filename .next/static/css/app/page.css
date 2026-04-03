@@ -1,0 +1,177 @@
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/ScrollVelocity.css ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax span {
+  display: block;
+  margin-right: 30px;
+}
+
+
+.custom-scroll-text {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 900;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  background: linear-gradient(to bottom, #ffffff, #555555);
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.outline-text {
+  background: none;
+  -webkit-background-clip: initial;
+  background-clip: initial;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.4);
+  text-shadow: none;
+}
+
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./src/components/Countdown.css ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.countdown-section {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  z-index: 10;
+  background-color: transparent;
+}
+
+.countdown-container {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8rem;
+}
+
+.timer-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.time-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.time-value {
+  font-family: monospace;
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+
+.glitch {
+  position: relative;
+}
+
+.glitch::before, .glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 #ff00c1;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+  animation: glitch-anim2 5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(10px, 9999px, 86px, 0); }
+  5% { clip: rect(6px, 9999px, 3px, 0); }
+  10% { clip: rect(52px, 9999px, 80px, 0); }
+  15% { clip: rect(63px, 9999px, 14px, 0); }
+  20% { clip: rect(93px, 9999px, 20px, 0); }
+  25% { clip: rect(97px, 9999px, 54px, 0); }
+  30% { clip: rect(15px, 9999px, 86px, 0); }
+  100% { clip: rect(15px, 9999px, 86px, 0); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); }
+  5% { clip: rect(52px, 9999px, 74px, 0); }
+  10% { clip: rect(79px, 9999px, 85px, 0); }
+  15% { clip: rect(75px, 9999px, 5px, 0); }
+  20% { clip: rect(67px, 9999px, 61px, 0); }
+  25% { clip: rect(14px, 9999px, 79px, 0); }
+  30% { clip: rect(14px, 9999px, 79px, 0); }
+  100% { clip: rect(14px, 9999px, 79px, 0); }
+}
+
+.time-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 1rem;
+}
+
+.time-separator {
+  font-family: monospace;
+  font-size: 6rem;
+  color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-20px);
+}
+
+.about-text-wrapper {
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  color: #fff;
+  max-width: 1000px;
+}
+
+@media (max-width: 900px) {
+  .time-value { font-size: 4rem; }
+  .time-separator { font-size: 3rem; transform: translateY(-10px); }
+  .about-text-wrapper { font-size: 2rem; }
+  .timer-wrapper { gap: 1rem; }
+}
+
