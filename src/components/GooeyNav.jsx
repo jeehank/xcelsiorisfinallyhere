@@ -1,27 +1,44 @@
 "use client";
+
 import React, { useRef, useEffect, useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import gsap from 'gsap';
 import './GooeyNav.css';
+import { authClient } from '../../lib/auth-client';
 
+/**
+ * GooeyNav Component
+ * 
+ * A navigation component with a gooey indicator effect and session-aware
+ * registration/logout buttons.
+ * 
+ * @param {Array} items - List of navigation items { label, href }
+ * @param {number} initialActiveIndex - The index of the item to be active initially
+ */
 const GooeyNav = ({
   items,
   initialActiveIndex = 0,
 }) => {
+  // Better Auth hook to manage and validate user sessions.
+  // data: session will be null if no session exists or the user is logged out.
+  // isPending tracks the loading state to prevent UI flickering.
+  const { data: session, isPending, refetch } = authClient.useSession();
+  
   const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
   const indicatorRef = useRef(null);
   const containerRef = useRef(null);
   const router = useRouter();
   const pathname = usePathname();
 
+  // Sync active index with the current URL pathname
   useEffect(() => {
-    
     const currentIndex = items.findIndex(item => item.href === pathname);
     if (currentIndex !== -1) {
       setActiveIndex(currentIndex);
     }
   }, [pathname, items]);
 
+  // Handle the gooey indicator animation using GSAP
   useEffect(() => {
     if (!containerRef.current || !indicatorRef.current) return;
 
@@ -43,9 +60,25 @@ const GooeyNav = ({
     }
   }, [activeIndex]);
 
+  /**
+   * Handles click on navigation items
+   */
   const handleItemClick = (index, href) => {
     setActiveIndex(index);
     router.push(href);
+  };
+
+  /**
+   * Handles the logout process
+   */
+  const handleLogout = async () => {
+    try {
+      await authClient.signOut();
+      // Refetch the session to update the UI immediately
+      await refetch();
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
   };
 
   return (
@@ -66,15 +99,28 @@ const GooeyNav = ({
         </div>
       </nav>
 
-      
       <div className="nav-right">
-        <button className="nav-registration-btn" onClick={() => router.push('/register')}>
-          Register Now
-        </button>
+        
+        {!isPending && (
+          !session ? (
+            <button 
+              className="nav-registration-btn" 
+              onClick={() => router.push('/register')}
+            >
+              Register Now
+            </button>
+          ) : (
+            <button 
+              className="nav-registration-btn" 
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          )
+        )}
       </div>
     </div>
   );
 };
 
 export default GooeyNav;
-

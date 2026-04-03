@@ -12,6 +12,7 @@ datasource db {
   provider = "postgresql"
 }
 
+<<<<<<< HEAD
 model Event {
   id           String        @id
   name         String
@@ -48,11 +49,13 @@ model User {
   accounts      Account[]
 
   role            String?
+<<<<<<< HEAD
   banned          Boolean?      @default(false)
   banReason       String?
   banExpires      DateTime?
   username        String?
   displayUsername String?
+<<<<<<< HEAD
   participants    Participant[]
 
   @@unique([email])
@@ -71,6 +74,11 @@ model Session {
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+<<<<<<< HEAD
+=======
+  impersonatedBy String?
+
+>>>>>>> auth
   @@unique([token])
   @@index([userId])
   @@map("session")
