@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 {}
+=======
+{
+  "/api/auth/[...all]/route": "app/api/auth/[...all]/route.js",
+  "/session/page": "app/session/page.js",
+  "/page": "app/page.js",
+  "/register/page": "app/register/page.js"
+}
+>>>>>>> auth

@@ -2,19 +2,6 @@ import {NextResponse, NextRequest} from 'next/server';
 import { auth } from '../../../../lib/auth';
 import { prismaClient } from '../../../../lib/prisma';
 
-<<<<<<< HEAD
-
-
-export async function POST(request: NextRequest) {
-    const { name, email, password } = await request.json();
-    const data = await auth.api.signUpEmail({
-        body: {
-            name,
-            email,
-            password
-        },
-    });
-=======
 import {headers} from 'next/headers'
 
 
@@ -50,7 +37,6 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({message: "Error creating user", error: e.message}, {status: e.statusCode || 500})
     }
     
->>>>>>> auth
 
     return NextResponse.json(data);
 }

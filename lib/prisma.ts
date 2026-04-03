@@ -12,11 +12,7 @@ declare global{
     var prisma: undefined|ReturnType<typeof PrismaClientSingleton>
 }
 
-<<<<<<< HEAD
-const prismaClient=globalThis.prisma||PrismaClientSingleton()
-=======
 const prismaClient=globalThis.prisma ?? PrismaClientSingleton()
->>>>>>> auth
 
 if(process.env.NODE_ENV !=="production") globalThis.prisma=prismaClient
 

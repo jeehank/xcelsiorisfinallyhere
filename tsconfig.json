@@ -13,11 +13,7 @@
     "incremental": true,
     "module": "esnext",
     "esModuleInterop": true,
-<<<<<<< HEAD
-    "moduleResolution": "node",
-=======
     "moduleResolution": "bundler",
->>>>>>> auth
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
