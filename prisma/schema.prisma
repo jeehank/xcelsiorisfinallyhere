@@ -13,15 +13,19 @@ datasource db {
 }
 
 model Event {
-  id           String        @id
-  name         String
-  dt           DateTime
+  id           String        @id @default(uuid())
+  name         String        @unique
+  overview     String
+  slug         String        @unique
+  dt           DateTime //DATE TIME
   createdAt    DateTime      @default(now())
   updatedAt    DateTime      @updatedAt
   details      String[]      @default([])
   participants Participant[]
   location     String
   NOP          Int           @default(2)
+
+  @@index([slug])
 }
 
 model Participant {
@@ -33,6 +37,8 @@ model Participant {
   school    User     @relation(fields: [userId], references: [id])
   event     Event[]
   userId    String
+
+  @@index([userId])
 }
 
 //AUTH GENERATED MODELS
@@ -48,12 +54,13 @@ model User {
   accounts      Account[]
 
   role            String?
-  banned          Boolean?      @default(false)
+  banned          Boolean?  @default(false)
   banReason       String?
   banExpires      DateTime?
   username        String?
   displayUsername String?
-  participants    Participant[]
+
+  participants Participant[]
 
   @@unique([email])
   @@unique([username])

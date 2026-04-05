@@ -2,6 +2,8 @@ import {NextResponse, NextRequest} from 'next/server';
 import { auth } from '../../../../lib/auth';
 import { prismaClient } from '../../../../lib/prisma';
 
+import {genEmail} from '../../../../lib/functions'
+
 import {headers} from 'next/headers'
 
 
@@ -21,7 +23,7 @@ export async function POST(request: NextRequest) {
     }
     const name=username
 
-    const email=username.concat('@gmail.com')
+    const email=genEmail(username)
     let data:any
     try{
         data = await auth.api.signUpEmail({

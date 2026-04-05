@@ -2,6 +2,51 @@
 import {cookies, headers} from 'next/headers'
 import { auth } from '../auth';
 
+import {prismaClient} from '../prisma'
+
+async function addEvent(prevState: { message: string; status: string } | null, form:FormData):Promise<{message:string, status:string}> {
+    
+    
+    const session=await auth.api.getSession({
+        headers: await headers()
+    })
+
+    if (!session || !(session?.user.role==="admin")) {
+            return {message: "Come back as admin", status: 'error'}
+    }
+
+    
+    const name=form.get('name') as string
+    const overview=form.get('overview') as string
+    const dateTime=new Date(form.get('date-time') as string)
+    const eventDetails=form.get('details') as string
+    const location=form.get('location') as string
+    const NOP=Number(form.get('number') as string)
+
+
+    try{
+        const createdEvent=await prismaClient.event.create({
+            data:{
+                name,
+                overview,
+                dt:dateTime,
+                eventDetails,
+                location,
+                NOP
+            } as any
+        })
+        if (! createdEvent){
+            return {message:'Failed to create event', status:'error'}
+        }
+    }catch (e){
+        return {message:(e as Error).message?e.message:'Kya data diya bsdk!', status:'error'}
+    }
+
+
+    return {message:'Event added successfully', status:'success'}
+}
+
+
 //WHY DO I HAVE TO PASS THE PREV STATE
 async function addSchool(prevState: { message: string; status: string } | null, form:FormData):Promise<{message:string, status:string}> {
     const username=form.get('username') as string
@@ -60,4 +105,4 @@ async function removeSchool(prevState: { message: string; status: string } | nul
 }
 
 
-export {addSchool, removeSchool}
+export {addSchool, removeSchool, addEvent}

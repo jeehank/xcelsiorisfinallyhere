@@ -25,7 +25,7 @@ export default function RegisterForm(){
             fontWeight: 600 
           }}
         >
-          {isPending ? "Signing Up..." : "Sign Up"}
+          {isPending ? "Adding School..." : "Add School"}
         </button>
         {state.message && (
           <p style={{ color: state.status === "success" ? "green" : "red", margin: 0 }}>
