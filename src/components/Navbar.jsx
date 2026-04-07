@@ -5,7 +5,7 @@ export default function Navbar() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Team", href: "/team" },
-    { label: "Schedule", href: "/schedule" }
+    { label: "Events", href: "/events" }
   ];
 
   return <GooeyNav items={items} initialActiveIndex={0} />;

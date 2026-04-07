@@ -7,9 +7,9 @@ export default function RegisterForm(){
   const [state, formAction, isPending] = useActionState<Promise<{message:string, status:string}>|null, FormData>(addSchool, { message: "", status: '' });
 
   return (
-    <div className="mt-8">
+    <div className="mt-50">
         <form action={formAction} style={{ maxWidth: "400px", margin: "0 auto", padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
-        <h2>Register</h2>
+        <h2>Add School:</h2>
         <input name="username" type="text" placeholder="Username" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
         <input name="password" type="password" placeholder="Password" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
         <button 

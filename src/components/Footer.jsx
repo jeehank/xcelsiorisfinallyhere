@@ -36,10 +36,10 @@ export default function Footer() {
           </p>
         </div>
         <div className="footer-right">
-          <h3 className="footer-contact-title">Contact Us</h3>
+          <h3 className="footer-contact-title">Contact Us:</h3>
           <div className="footer-contacts">
-            <p>I hate debayan</p>
-            <p>Jeehan Karanjai: 82748 69581</p>
+            <p>Debarpon Mukherjee: +91 84205 64720</p>
+            <p>Jeehan Karanjai: +91 82748 69581</p>
           </div>
         </div>
       </div>

@@ -105,4 +105,31 @@ async function removeSchool(prevState: { message: string; status: string } | nul
 }
 
 
-export {addSchool, removeSchool, addEvent}
+async function removeEvent(prevState: { message: string; status: string } | null, form:FormData):Promise<{message:string, status:string}> {
+    const eventID=form.get('slug') as string
+    const session=await auth.api.getSession({
+        headers: await headers()
+    })
+
+    if (!session || !(session?.user.role==="admin")) {
+            return {message: "Come back as admin", status: 'error'}
+    }
+
+    try{
+        if (!eventID){
+            return {message:'Slug is required', status:'error'}
+        }
+        const deleteUser = await prisma.event.delete({
+            where: {
+                slug: eventID,
+            },
+        });
+    }catch{
+        return {message:'Something went wrong', status:'error'}
+    }
+
+        
+    return {message:'Event removed successfully', status:'success'}
+}
+
+export {addSchool, removeSchool, addEvent, removeEvent}

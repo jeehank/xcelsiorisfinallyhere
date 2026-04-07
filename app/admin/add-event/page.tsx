@@ -9,7 +9,7 @@ const EventData =  () => {
 
 
   return (
-    <div className="mt-10">
+    <div className="mt-50">
         <form action={formAction} style={{ maxWidth: "400px", margin: "0 auto", padding: "2rem", display: "flex", flexDirection: "column", gap: "1rem" }}>
         <h2>Register</h2>
         <input name="name" type="text" placeholder="Name of Event" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
@@ -27,7 +27,7 @@ const EventData =  () => {
                 borderRadius: "6px", 
                 border: "1px solid #ccc",
                 width: "100%", // Ensures it fills the container like a text input
-                fontFamily: "inherit" // Ensures text doesn't look like "Courier"
+                
             }} 
         />
         
