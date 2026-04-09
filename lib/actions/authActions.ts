@@ -5,12 +5,12 @@ import { headers } from "next/headers";
 import { auth } from "../auth";
 
 export async function signIn(formData: FormData) {
-    const username = formData.get("username") as string;
-    const password = formData.get("password") as string;
+    const email=formData.get('username')?.toString()
+    const password=formData.get('password')?.toString()
 
-    const user=await auth.api.signInUsername({
+    const res=await auth.api.signInEmail({
         body:{
-            username,
+            email,
             password
         },
         headers: await headers()

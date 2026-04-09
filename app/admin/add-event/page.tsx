@@ -5,7 +5,7 @@ import { addEvent } from "../../../lib/actions/adminActions";
 
 
 const EventData =  () => {
-    const [state, formAction, isPending] = useActionState<Promise<{message:string, status:string}>|null, FormData>(addEvent, { message: "", status: '' });
+  const [state, formAction, isPending] = useActionState<Promise<{message:string, status:string}>|null, FormData>(addEvent, { message: "", status: '' });
 
 
   return (
@@ -14,7 +14,8 @@ const EventData =  () => {
         <h2>Register</h2>
         <input name="name" type="text" placeholder="Name of Event" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
         <input name="overview" type="text" placeholder="Overview" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
-        <input name="date-time" type="text" placeholder="UTC-Date" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
+        <input name="date" type="text" placeholder="Date" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
+        <input name="time" type="text" placeholder="Time" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
         <input name="location" type="text" placeholder="Event Location" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
         <input name="number" type="number" placeholder="Number of Participants" required style={{ padding: "0.5rem", borderRadius: "6px", border: "1px solid #ccc" }} />
         <textarea 

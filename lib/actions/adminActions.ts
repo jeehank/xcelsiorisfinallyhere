@@ -18,7 +18,8 @@ async function addEvent(prevState: { message: string; status: string } | null, f
     
     const name=form.get('name') as string
     const overview=form.get('overview') as string
-    const dateTime=new Date(form.get('date-time') as string)
+    const date=new Date(form.get('date') as string)
+    const time=form.get('time') as string
     const eventDetails=form.get('details') as string
     const location=form.get('location') as string
     const NOP=Number(form.get('number') as string)
@@ -29,7 +30,8 @@ async function addEvent(prevState: { message: string; status: string } | null, f
             data:{
                 name,
                 overview,
-                dt:dateTime,
+                date,
+                time,
                 eventDetails,
                 location,
                 NOP

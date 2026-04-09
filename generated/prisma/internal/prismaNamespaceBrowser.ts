@@ -80,12 +80,13 @@ export const EventScalarFieldEnum = {
   name: 'name',
   overview: 'overview',
   slug: 'slug',
-  dt: 'dt',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   details: 'details',
   location: 'location',
-  NOP: 'NOP'
+  NOP: 'NOP',
+  date: 'date',
+  time: 'time'
 } as const
 
 export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof EventScalarFieldEnum]
@@ -111,12 +112,12 @@ export const UserScalarFieldEnum = {
   image: 'image',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  role: 'role',
-  banned: 'banned',
-  banReason: 'banReason',
   banExpires: 'banExpires',
-  username: 'username',
-  displayUsername: 'displayUsername'
+  banReason: 'banReason',
+  banned: 'banned',
+  displayUsername: 'displayUsername',
+  role: 'role',
+  username: 'username'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -130,7 +131,8 @@ export const SessionScalarFieldEnum = {
   updatedAt: 'updatedAt',
   ipAddress: 'ipAddress',
   userAgent: 'userAgent',
-  userId: 'userId'
+  userId: 'userId',
+  impersonatedBy: 'impersonatedBy'
 } as const
 
 export type SessionScalarFieldEnum = (typeof SessionScalarFieldEnum)[keyof typeof SessionScalarFieldEnum]
