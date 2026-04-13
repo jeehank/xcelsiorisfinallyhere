@@ -1,19 +1,5 @@
 {
-  "node": {
-    "409ee749556b9c8a9635c6f995148199556cc236e3": {
-      "workers": {
-        "app/register/page": {
-          "moduleId": "(action-browser)/./node_modules/.pnpm/next@15.5.14_@babel+core@7._fad08fde2ad235f95c74feb2610828fd/node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CauthActions.ts%22%2C%5B%7B%22id%22%3A%22409ee749556b9c8a9635c6f995148199556cc236e3%22%2C%22exportedName%22%3A%22signIn%22%2C%22filename%22%3A%22..%2FC%3A%5C%5CUsers%5C%5Cuser%5C%5CDocuments%5C%5CGitHub%5C%5Cxcelsiorisfinallyhere%5C%5Clib%5C%5Cactions%5C%5CauthActions.ts%22%7D%5D%5D%5D&__client_imported__=true!",
-          "async": true
-        }
-      },
-      "layer": {
-        "app/register/page": "action-browser"
-      },
-      "filename": "../C:\\Users\\user\\Documents\\GitHub\\xcelsiorisfinallyhere\\lib\\actions\\authActions.ts",
-      "exportedName": "signIn"
-    }
-  },
+  "node": {},
   "edge": {},
-  "encryptionKey": "UNEywWxU7VgdbGjwcXnZxcBieFKjSwyrnHvMgOqxEks="
+  "encryptionKey": "L7YZy921/evyeZlduexTgp2A36t02Lw47FFfrfWvrbs="
 }

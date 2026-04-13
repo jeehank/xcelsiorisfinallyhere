@@ -8,7 +8,7 @@ const PrismaClientSingleton = ()=>{
         query:{
             event:{
                 async create({model, args, query}: any){
-                    const {name, overview, eventDetails, dt, location, NOP,  ...randbs}=args.data
+                    const {name, overview, eventDetails, date, time, location, NOP,  ...randbs}=args.data
 
                     //SLUG GENERATION
                     const slug = name
@@ -22,7 +22,7 @@ const PrismaClientSingleton = ()=>{
                         throw new Error("Invalid event title for slug generation!");
 
                     const details=eventDetails.split('\n')
-                    const createdEvent=await query({data:{name, overview, dt, slug, details, location, NOP}},)
+                    const createdEvent=await query({data:{name, overview, date, time, slug, details, location, NOP}},)
 
                     return createdEvent;
                 }

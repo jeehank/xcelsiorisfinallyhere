@@ -8,33 +8,36 @@ datasource db {
 }
 
 model Event {
-  id           String        @id @default(uuid())
-  name         String        @unique
-  overview     String
-  slug         String        @unique
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
-  details      String[]      @default([])
-  location     String
-  NOP          Int           @default(2)
-  date         String
-  time         String
-  participants Participant[] @relation("EventToParticipant")
+  id          String        @id @default(uuid())
+  name        String        @unique
+  overview    String
+  slug        String        @unique
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  details     String[]      @default([])
+  location    String
+  NOP         Int           @default(2)
+  date        String
+  time        String
+  Participant Participant[]
 
   @@index([slug])
 }
 
 model Participant {
-  id        String   @id
-  name      String
-  number    String   @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  userId    String
-  school    User     @relation(fields: [userId], references: [id])
-  event     Event[]  @relation("EventToParticipant")
+  id         String   @id
+  name       String
+  number     String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  eventName  String
+  schoolName String
+  Event      Event    @relation(fields: [eventName], references: [name])
+  user       User     @relation(fields: [schoolName], references: [username])
 
-  @@index([userId])
+  @@index([eventName])
+  @@index([number])
+  @@index([schoolName])
 }
 
 model User {
@@ -51,7 +54,8 @@ model User {
   displayUsername String?
   role            String?
   username        String?       @unique
-  participants    Participant[]
+  slugs           String[]      @default([])
+  Participant     Participant[]
   accounts        Account[]
   sessions        Session[]
 

@@ -98,7 +98,8 @@ export const ParticipantScalarFieldEnum = {
   number: 'number',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  userId: 'userId'
+  eventName: 'eventName',
+  schoolName: 'schoolName'
 } as const
 
 export type ParticipantScalarFieldEnum = (typeof ParticipantScalarFieldEnum)[keyof typeof ParticipantScalarFieldEnum]
@@ -117,7 +118,8 @@ export const UserScalarFieldEnum = {
   banned: 'banned',
   displayUsername: 'displayUsername',
   role: 'role',
-  username: 'username'
+  username: 'username',
+  slugs: 'slugs'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]

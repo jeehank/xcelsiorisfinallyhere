@@ -1,0 +1,160 @@
+.events-container {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.events-title {
+  font-size: clamp(3rem, 5vw, 5rem);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.events-form-wrapper {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.day-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.day-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background: rgba(20, 20, 20, 0.4);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(120, 180, 255, 0.3);
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+.event-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.event-time {
+  font-size: 1rem;
+  color: rgba(120, 180, 255, 0.9);
+  background: rgba(120, 180, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+}
+
+.event-inputs-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.participant-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.participant-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.2rem;
+}
+
+.participant-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.participant-input:focus {
+  border-color: rgba(120, 180, 255, 0.5);
+  box-shadow: 0 0 10px rgba(120, 180, 255, 0.1);
+}
+
+.event-card-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.event-register-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #fff;
+  background: linear-gradient(135deg, rgba(120, 180, 255, 0.3), rgba(60, 120, 255, 0.3));
+  border: 1px solid rgba(120, 180, 255, 0.5);
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(120, 180, 255, 0.15);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.event-register-btn:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, rgba(120, 180, 255, 0.4), rgba(60, 120, 255, 0.4));
+  box-shadow: 0 10px 30px rgba(120, 180, 255, 0.25);
+  border-color: rgba(120, 180, 255, 0.8);
+}
+
+.event-register-btn:active {
+  transform: translateY(0);
+}
