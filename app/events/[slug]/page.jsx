@@ -13,6 +13,21 @@ import Link from "next/link";
 import "../events.css";
 import ClientForm from "./ClientForm";
 
+export async function generateStaticParams() {
+  const events = await prismaClient.event.findMany({
+    select: {
+      slug: true,
+    },
+  });
+ 
+  return events.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+
+
+
 export default async function DynamicEventPage({ params }) {
   const { slug } =await params;
   const event = await prismaClient.event.findUnique({

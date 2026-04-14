@@ -1,6 +1,0 @@
-{
-  "/api/auth/[...all]/route": "app/api/auth/[...all]/route.js",
-  "/api/registration/signUp/route": "app/api/registration/signUp/route.js",
-  "/admin/add-school/page": "app/admin/add-school/page.js",
-  "/admin/add-event/page": "app/admin/add-event/page.js"
-}

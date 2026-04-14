@@ -12,17 +12,7 @@ import { prismaClient } from '../../lib/prisma';
 
 import Spinner from '../../src/components/Spinner'
 
-export async function generateStaticParams() {
-  const events = await prismaClient.event.findMany({
-    select: {
-      slug: true,
-    },
-  });
- 
-  return events.map((post) => ({
-    slug: post.slug,
-  }))
-}
+
 
 
 export default function Registration() {
