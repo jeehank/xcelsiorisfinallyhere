@@ -1,5 +1,5 @@
 function genEmail(username:string){
-    const w=username.split('_')
+    const w=username.split(' ')
     let email=''
     for (let i=0; i<w.length; i++){
         email+=w[i].toLowerCase()

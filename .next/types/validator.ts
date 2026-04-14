@@ -77,6 +77,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/admin/remove-participants/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin/remove-participants">> = Specific
+  const handler = {} as typeof import("../../app/admin/remove-participants/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/admin/remove/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/admin/remove">> = Specific
@@ -117,6 +126,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/registration/signUp">> = Specific
   const handler = {} as typeof import("../../app/api/registration/signUp/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/registration/the-beginning/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/registration/the-beginning">> = Specific
+  const handler = {} as typeof import("../../app/api/registration/the-beginning/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

@@ -7,5 +7,12 @@ export const authClient = createAuthClient({
     plugins:[
         usernameClient(),
         adminClient()
-    ]
+    ],
+    user: {
+        additionalFields: {
+            completedForms: {
+                type: "string[]"
+            }
+        }
+    }
 })

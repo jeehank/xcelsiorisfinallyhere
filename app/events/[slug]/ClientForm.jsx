@@ -1,24 +1,71 @@
 "use client";
+import { useFormStatus } from "../../../lib/slug-client";
+import { authClient } from "../../../lib/auth-client";
+import { redirect } from "next/navigation";
 import React from "react";
+import {registerParticipants} from "../../../lib/actions/registration";
 
 export default function ClientForm({ event, slug, numberOfParticipants }) {
+
+    const {shouldShow, isLoading} = useFormStatus(slug);
+
 
 
   const handleRegister = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    const sess = await authClient.getSession();
+      
+      // Check if session exists to avoid errors
+      if (!sess?.data?.user?.username) {
+        console.error("No user session found");
+        redirect('/events')
+      }
     const data = Object.fromEntries(formData.entries());
     
     let participants = [];
     for (let i = 1; i <= numberOfParticipants; i++) {
-      participants.push({
-        name: data[`p${i}-name`],
-        contact: data[`p${i}-contact`]
-      });
+      const name = data[`p${i}-name`];
+      const contact = data[`p${i}-contact`];
+        
+        participants.push({ 
+          name, 
+          number: contact, 
+          schoolName:sess.data.user.username, 
+          eventName: event.name,
+        });
     }
-    console.log("Participants for", event.name, ":\n", participants);
+
+    const res=await registerParticipants(participants);
+
+    if (res.success) {
+
+      await authClient.getSession({forceRefresh: true}); // Refresh session to update user data
+      redirect('/events');
+    }
+    else{
+      console.error("Registration failed");
+    }
   };
 
+
+  if (!shouldShow && !isLoading) {
+    return (
+      <div>
+        You have already registered for this event.
+
+      </div>
+    )
+  }
+
+  if (!shouldShow && isLoading) {
+    return (
+      <div>
+        Not authenticated. Please log in to register for this event.
+      </div>
+    )
+  }
+  
   return (
     <form className="event-card" onSubmit={handleRegister} style={{ width: '100%' }}>
       <div className="event-inputs-group">
