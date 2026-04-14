@@ -2,24 +2,29 @@
 import { useFormStatus } from "../../../lib/slug-client";
 import { authClient } from "../../../lib/auth-client";
 import { redirect } from "next/navigation";
-import React from "react";
+import {useState} from "react";
 import {registerParticipants} from "../../../lib/actions/registration";
 
 export default function ClientForm({ event, slug, numberOfParticipants }) {
 
-    
-    const {shouldShow, isLoading} = useFormStatus(slug);
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+
+  const {shouldShow, isLoading} = useFormStatus(slug);
 
   
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(e.target);
     const sess = await authClient.getSession();
     
       
       // Check if session exists to avoid errors
       if (!sess?.data?.user?.username) {
+        setIsSubmitting(false);
         console.error("No user session found");
         redirect('/events')
       }
@@ -54,10 +59,13 @@ export default function ClientForm({ event, slug, numberOfParticipants }) {
       redirect('/events');
     }
     else{
-      console.error("Registration failed");
+      setIsSubmitting(false)
+      redirect('/events');
     }
   };
 
+
+  if (isSubmitting) return <Spinner />;
 
   if (!shouldShow && !isLoading) {
     return (

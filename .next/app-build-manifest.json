@@ -16,22 +16,15 @@
       "static/chunks/main-app.js",
       "static/chunks/app/admin/add-event/page.js"
     ],
-    "/events/[slug]/page": [
+    "/admin/add-school/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/events/[slug]/page.css",
-      "static/chunks/app/events/[slug]/page.js"
+      "static/chunks/app/admin/add-school/page.js"
     ],
-    "/events/page": [
+    "/api/registration/signUp/route": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/events/page.css",
-      "static/chunks/app/events/page.js"
-    ],
-    "/admin/remove-participants/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/remove-participants/page.js"
+      "static/chunks/app/api/registration/signUp/route.js"
     ]
   }
 }

@@ -4,17 +4,22 @@ import { headers } from "next/headers";
 
 import { auth } from "../auth";
 
-export async function signIn(formData: FormData) {
-    const username=formData.get('username')?.toString()
-    const password=formData.get('password')?.toString()
+export async function signIn(prevState, form) {
+    const username=form.get('username')?.toString()
+    const password=form.get('password')?.toString()
 
     const res=await auth.api.signInUsername({
         body:{
             username,
             password
         },
-        headers: await headers()
+        headers: await headers(),
+        asResponse: true
     })
 
-    redirect("/")
+    if (res.status===200){
+        redirect('/events')
+    }else{
+        return {message:'Invalid credentials', status:'error'}
+    }
 }

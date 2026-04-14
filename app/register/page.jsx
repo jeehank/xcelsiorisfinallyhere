@@ -3,9 +3,33 @@ import React, { useState, useEffect, useRef, useActionState } from 'react';
 import gsap from 'gsap';
 import '../../src/css/Registration.css';
 
+import { redirect } from 'next/navigation';
+
+import {authClient} from '../../lib/auth-client'
 import {signIn} from '../../lib/actions/authActions'
 
+import { prismaClient } from '../../lib/prisma';
+
+import Spinner from '../../src/components/Spinner'
+
+export async function generateStaticParams() {
+  const events = await prismaClient.event.findMany({
+    select: {
+      slug: true,
+    },
+  });
+ 
+  return events.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+
 export default function Registration() {
+
+  const {data:session}= authClient.useSession()
+  const [state, formAction, isPending]=useActionState(signIn, {message:'', status:''})
+
   const cardRef = useRef(null);
   
 
@@ -45,6 +69,12 @@ export default function Registration() {
     };
   }, []);
 
+
+  if (session) {
+    
+    redirect('/events')
+  }
+
   return (
     <section id="registration" className="reg-section">
       <div className="reg-container" ref={cardRef}>
@@ -53,7 +83,7 @@ export default function Registration() {
             <h3>SYSTEM ACCESS</h3>
             <p>Enter credentials to register</p>
           </div>
-          <form className="reg-form" action={signIn}>
+          <form className="reg-form" action={formAction}>
             <div className="input-group">
               <input type="text" name="username" placeholder=" " required />
               <label>USERNAME</label>
@@ -62,7 +92,20 @@ export default function Registration() {
               <input type="password" name="password" placeholder=" " required />
               <label>PASSWORD</label>
             </div>
-            <button type="submit" className="btn-magnetic">
+
+            {
+              (state.message) &&(
+                <p style={{ color: state.status === "success" ? "green" : "red", margin: 0 }}>
+                {state.message}
+                </p>
+            )}
+            <button type="submit" disabled={isPending} className="btn-magnetic">
+              {
+                (isPending &&
+                  <Spinner size="small"/>
+                )
+              }
+              
               ACCESS TERMINAL
             </button>
           </form>

@@ -1,6 +1,15 @@
+//HERE WE ALSO HAVE THE FIELDS DETAILS AND DATE IN THE DATABASE. SO YOU CAN USE THEM TO DISPLAY ON THE PAGE. ALSO MAKE SURE TO HANDLE THE CASE WHEN THE EVENT IS NOT FOUND IN THE DATABASE AND DISPLAY A USER-FRIENDLY MESSAGE. ALSO ADD A BACK BUTTON TO NAVIGATE USERS BACK TO THE EVENTS PAGE.
+//CHANGE THESE FRONTEND BS. MY BACKEND IS PRETTY MUCH DONE.
+
+
+
+
+
 import {prismaClient} from '../../../lib/prisma'
 import { getEventBySlug } from "../data";
 import Link from "next/link";
+
+
 import "../events.css";
 import ClientForm from "./ClientForm";
 
