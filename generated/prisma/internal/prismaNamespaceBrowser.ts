@@ -95,10 +95,11 @@ export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof Ev
 export const ParticipantScalarFieldEnum = {
   id: 'id',
   name: 'name',
+  class: 'class',
   number: 'number',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  eventName: 'eventName',
+  slugEvent: 'slugEvent',
   schoolName: 'schoolName'
 } as const
 

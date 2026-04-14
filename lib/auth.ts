@@ -33,7 +33,7 @@ export const auth = betterAuth({
 	},
     plugins: [
         admin({
-            adminUserIds: ["GG2CT4PDSxEfbMXI29fq8qytA8EYvtls"], // Array of user IDs that should have admin access
+            adminUserIds: ["kCTSnE8Wlh0PdD6xuuqIxT1DyaE7uvpX"], // Array of user IDs that should have admin access
         }),
         username(),
         nextCookies()

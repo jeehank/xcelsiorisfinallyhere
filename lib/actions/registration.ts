@@ -12,11 +12,11 @@ export async function registerParticipants(participants){
         })
         const user=await prismaClient.user.update({
         where:{
-            username:participants[0].user.connect.username
+            username:participants[0].schoolName
         },
         data:{
             slugs:{
-                push: participants[0].event.connect.slug
+                push: participants[0].slugEvent
             }
         }
         });

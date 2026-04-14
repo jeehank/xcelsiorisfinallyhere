@@ -2,7 +2,7 @@ import {NextResponse, NextRequest} from 'next/server';
 import { auth } from '../../../../lib/auth';
 import { prismaClient } from '../../../../lib/prisma';
 
-import {genEmail} from '../../../../lib/functions'
+import {genEmail} from '../../../../lib/methods/utilities'
 
 import {headers} from 'next/headers'
 
@@ -18,12 +18,12 @@ export async function POST(request: NextRequest) {
         let data:any
         try{
             data = await auth.api.signUpEmail({
-            body: {
-                name,
-                email,
-                password,
-                username
-            },
+                body: {
+                    name,
+                    email,
+                    password,
+                    username
+                } as any
             },
         );
         }catch(e){

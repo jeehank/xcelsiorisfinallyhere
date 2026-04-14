@@ -2,7 +2,7 @@ import {NextResponse, NextRequest} from 'next/server';
 import { auth } from '../../../../lib/auth';
 import { prismaClient } from '../../../../lib/prisma';
 
-import {genEmail} from '../../../../lib/functions'
+import {genEmail, sanitizeUsername} from '../../../../lib/methods/utilities'
 
 import {headers} from 'next/headers'
 
@@ -17,12 +17,12 @@ export async function POST(request: NextRequest) {
     }
     
 
-    const {password, username } = await request.json();
+    let {password, username } = await request.json();
     if (!password || !username) {
         return NextResponse.json({message: "Username and password are required"}, {status: 422})
     }
     const name=username
-
+    username = sanitizeUsername(username)
     const email=genEmail(username)
     let data:any
     try{
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
             email,
             password,
             username
-        },
+        } as any
         },
     );
     }catch(e){

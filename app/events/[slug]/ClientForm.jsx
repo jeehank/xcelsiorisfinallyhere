@@ -7,14 +7,16 @@ import {registerParticipants} from "../../../lib/actions/registration";
 
 export default function ClientForm({ event, slug, numberOfParticipants }) {
 
+    
     const {shouldShow, isLoading} = useFormStatus(slug);
 
-
+  
 
   const handleRegister = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const sess = await authClient.getSession();
+    
       
       // Check if session exists to avoid errors
       if (!sess?.data?.user?.username) {
@@ -26,13 +28,21 @@ export default function ClientForm({ event, slug, numberOfParticipants }) {
     let participants = [];
     for (let i = 1; i <= numberOfParticipants; i++) {
       const name = data[`p${i}-name`];
+      let classNum
+      try{
+        classNum = parseInt(data[`p${i}-class`]);
+      } catch{
+        redirect('/events')
+      }
+      
       const contact = data[`p${i}-contact`];
         
         participants.push({ 
           name, 
+          class: classNum,
           number: contact, 
           schoolName:sess.data.user.username, 
-          eventName: event.name,
+          slugEvent: slug,
         });
     }
 
@@ -40,7 +50,7 @@ export default function ClientForm({ event, slug, numberOfParticipants }) {
 
     if (res.success) {
 
-      await authClient.getSession({forceRefresh: true}); // Refresh session to update user data
+      await authClient.revalidate()
       redirect('/events');
     }
     else{
@@ -81,7 +91,13 @@ export default function ClientForm({ event, slug, numberOfParticipants }) {
               required
             />
 
-            
+            <input
+              type="number"
+              name={`p${i + 1}-class`}
+              placeholder="Class"
+              className="participant-input"
+              required
+            />
 
             <input
               type="tel"

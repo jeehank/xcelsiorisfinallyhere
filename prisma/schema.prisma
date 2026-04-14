@@ -27,15 +27,16 @@ model Event {
 model Participant {
   id         String   @id @default(uuid())
   name       String
+  class      Int
   number     String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  eventName  String
+  slugEvent  String
   schoolName String
-  Event      Event    @relation(fields: [eventName], references: [name])
+  Event      Event    @relation(fields: [slugEvent], references: [slug])
   user       User     @relation(fields: [schoolName], references: [username])
 
-  @@index([eventName])
+  @@index([slugEvent])
   @@index([number])
   @@index([schoolName])
 }
