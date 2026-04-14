@@ -8,8 +8,6 @@ import { redirect } from 'next/navigation';
 import {authClient} from '../../lib/auth-client'
 import {signIn} from '../../lib/actions/authActions'
 
-import { prismaClient } from '../../lib/prisma';
-
 import Spinner from '../../src/components/Spinner'
 
 
