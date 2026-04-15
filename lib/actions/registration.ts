@@ -4,7 +4,6 @@ import {prismaClient} from '../prisma'
 
 
 export async function registerParticipants(participants){
-    console.log('Inside the registration function:',participants)
     try{
         const events=await prismaClient.participant.createMany({
             data:participants,
