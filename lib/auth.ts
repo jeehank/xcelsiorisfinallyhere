@@ -24,6 +24,9 @@ export const auth = betterAuth({
             }
         }
     },
+    trustedOrigins: [
+        process.env.BETTER_AUTH_URL as string,
+    ],
     session: {
 		cookieCache: {
 			enabled: true,
@@ -31,6 +34,9 @@ export const auth = betterAuth({
 			strategy: "jwt" // Use JWT format
 		}
 	},
+    advanced:{
+        useSecureCookies:true
+    },
     plugins: [
         admin({
             adminUserIds: ["kCTSnE8Wlh0PdD6xuuqIxT1DyaE7uvpX"], // Array of user IDs that should have admin access
