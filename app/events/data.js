@@ -11,7 +11,7 @@ export const eventsDay1 = [
   { name: "Robotics", time: "2:30 PM", participants: 2, slug: "x-botics" },
   { name: "Sudoku(6-8)", time: "2:30 PM", participants: 2, slug: "x-grid" },
   { name: "Graph Art", time: "2:30 PM", participants: 2, slug: "x-graph-art" },
-  { name: "HTML & CSS", time: "2:30 PM", participants: 2, slug: "x-html---css" },
+  { name: "HTML & CSS", time: "2:30 PM", participants: 2, slug: "x-interface" },
   { name: "Debate", time: "2:15 PM", participants: 2, slug: "x-calibre" },
   { name: "FIFA", time: "2:30 PM", participants: 2, slug: "x-fifa" },
 ];
