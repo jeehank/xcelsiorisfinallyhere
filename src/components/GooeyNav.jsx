@@ -25,6 +25,7 @@ const GooeyNav = ({
   const { data: session, isPending, refetch } = authClient.useSession();
   
   const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const indicatorRef = useRef(null);
   const containerRef = useRef(null);
   const router = useRouter();
@@ -65,6 +66,7 @@ const GooeyNav = ({
    */
   const handleItemClick = (index, href) => {
     setActiveIndex(index);
+    setIsMobileMenuOpen(false);
     router.push(href);
   };
 
@@ -119,6 +121,57 @@ const GooeyNav = ({
           )
         )}
       </div>
+
+      {/* Hamburger button for mobile */}
+      <button 
+        className={`hamburger-btn ${isMobileMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+      >
+        <div className="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="mobile-menu-overlay">
+          {items.map((item, index) => (
+            <button
+              key={index}
+              className={`nav-item ${activeIndex === index ? 'active' : ''}`}
+              onClick={() => handleItemClick(index, item.href)}
+            >
+              {item.label}
+            </button>
+          ))}
+          
+          {!isPending && (
+            !session ? (
+              <button 
+                className="nav-registration-btn" 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  router.push('/register');
+                }}
+              >
+                Register Now
+              </button>
+            ) : (
+              <button 
+                className="nav-registration-btn" 
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  handleLogout();
+                }}
+              >
+                Logout
+              </button>
+            )
+          )}
+        </div>
+      )}
     </div>
   );
 };

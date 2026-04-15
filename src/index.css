@@ -461,3 +461,64 @@ h6 {
   color: rgba(255, 255, 255, 0.3);
   font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+  .section, .hero-images-wrapper {
+    width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .sponsors-track {
+    flex-direction: column;
+    padding: 0 5vw;
+    gap: 3rem;
+  }
+
+  .sponsor-card {
+    width: 90vw;
+    aspect-ratio: auto;
+    padding: 3rem 0;
+  }
+
+  .about-content {
+    gap: 4rem;
+  }
+
+  .about-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+
+  .sponsors-header {
+    position: relative;
+    top: 5vh;
+    text-align: center;
+    left: auto;
+    margin-bottom: 2rem;
+  }
+
+  .sponsors-header h2, .team-content h2, .father-address h3, .festival-bio h3, .school-bio h3 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .giant-scroll-text {
+    font-size: clamp(4rem, 15vw, 8rem);
+  }
+}

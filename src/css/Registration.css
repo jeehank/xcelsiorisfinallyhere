@@ -101,3 +101,27 @@
   font-size: 1rem;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .reg-container {
+    max-width: 95%;
+  }
+  .glass-card {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+  .card-header h3 {
+    font-size: 1.2rem;
+  }
+  .input-group input {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+  .input-group label {
+    font-size: 0.8rem;
+  }
+  .btn-magnetic {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+  }
+}

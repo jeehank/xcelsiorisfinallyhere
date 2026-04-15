@@ -36,7 +36,6 @@ export default function Sponsors() {
 
   const realSponsors = [
     { id: 1, title: "Title Sponsor", src: "/eveready.png" },
-    { id: 2, title: "Associate Sponsor", src: "/wowmomo.png" },
     { id: 3, title: "Radio Partner", src: "/friendsfm.png" },
   ];
 

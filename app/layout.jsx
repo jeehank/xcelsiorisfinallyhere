@@ -4,7 +4,7 @@ import Navbar from "../src/components/Navbar";
 import SmoothScroll from "../src/components/SmoothScroll";
 
 export const metadata = {
-  title: "tmp-app",
+  title: "X-Celsior'26",
   description: "Next.js Migration",
 };
 

@@ -335,3 +335,30 @@
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.5);
 }
+
+@media (max-width: 768px) {
+  .schedule-header-fixed h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    margin-bottom: 0.8rem;
+  }
+  .all-events-btn, .day-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.9rem;
+  }
+  .info-time { font-size: 0.9rem; }
+  .info-name { font-size: 1rem; }
+  .info-venue { font-size: 0.75rem; }
+  .node-bio {
+    width: 200px;
+    font-size: 0.85rem;
+    padding: 0.75rem;
+  }
+  .info-top { bottom: 25px; }
+  .info-bottom { top: 25px; }
+  .menu-title { font-size: 1.5rem; margin-bottom: 1rem; }
+  .events-menu-glass { padding: 1.2rem; width: 95%; max-height: 85vh; }
+  .menu-item { padding: 0.8rem; gap: 1rem; }
+  .menu-item-time { font-size: 0.9rem; min-width: 75px; }
+  .menu-item-name { font-size: 1rem; }
+  .menu-item-venue { font-size: 0.8rem; }
+}

@@ -5,6 +5,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Event {
@@ -27,14 +28,14 @@ model Event {
 model Participant {
   id         String   @id @default(uuid())
   name       String
-  class      Int
   number     String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
-  slugEvent  String
   schoolName String
-  Event      Event    @relation(fields: [slugEvent], references: [slug])
+  class      Int
+  slugEvent  String
   user       User     @relation(fields: [schoolName], references: [username])
+  Event      Event    @relation(fields: [slugEvent], references: [slug])
 
   @@index([slugEvent])
   @@index([number])

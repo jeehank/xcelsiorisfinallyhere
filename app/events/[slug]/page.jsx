@@ -42,7 +42,7 @@ export default async function DynamicEventPage({ params }) {
     return (
       <div className="events-container">
         <h1 className="events-title">Event Not Found</h1>
-        <Link href="/events" className="event-register-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
+        <Link href="/events" className="event-register-btn" style={{ textDecoration: 'none', display: 'inline-block', width: 'auto', padding: '0.8rem 2rem' }}>
           Back to Events
         </Link>
       </div>

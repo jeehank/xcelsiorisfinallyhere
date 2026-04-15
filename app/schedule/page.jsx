@@ -10,32 +10,30 @@ if (typeof window !== "undefined") {
 }
 
 const day1Events = [
-  { time: '8:00 AM', name: 'Registration', venue: 'Gymnasium', bio: 'Check in, collect your ID cards, and get ready for an exciting day!' },
-  { time: '8:30 AM', name: 'Opening Ceremony', venue: 'Auditorium', bio: 'Kickoff the festival with our chief guests and a special performance.' },
-  { time: '10:00 AM', name: 'Quiz', venue: 'Xavier Hall', bio: 'Test your tech knowledge in our definitive school IT quiz.' },
-  { time: '10:00 AM', name: 'Robotics', venue: 'Physics Lab', bio: 'Watch custom-built robots battle it out in the arena.' },
-  { time: '10:30 AM', name: 'Sudoku(6-8)', venue: 'Reading Room', bio: 'A logic-based numbers challenge for the middle school division.' },
-  { time: '10:30 AM', name: 'Graph Art', venue: 'Computer Lab 1', bio: 'Plot beautiful art using mathematical functions and graphic tools.' },
-  { time: '11:00 AM', name: 'HTML & CSS', venue: 'Computer Lab 2', bio: 'Show off your front-end development skills by recreating mockups.' },
-  { time: '1:00 PM', name: 'LUNCH BREAK', venue: 'Classrooms', bio: 'Rest, recharge, and enjoy the food provided.' },
-  { time: '2:00 PM', name: 'Debate (Pool -1)', venue: 'Xavier Hall', bio: 'First pool of our high-stakes tech-focused debate.' },
-  { time: '2:00 PM', name: 'Debate (Pool -2)', venue: 'Sassel Hall', bio: 'Second pool of the rigorous debate tournament.' },
-  { time: '2:00 PM', name: 'Cryptography', venue: 'Computer Lab 1', bio: 'Crack the ciphers and solve the encrypted puzzles.' },
-  { time: '3:00 PM', name: 'FIFA', venue: "Bruylant's Hall", bio: 'Show your e-sports skills in the ultimate FIFA showdown.' },
+  { time: '12:30 PM', name: 'Registration', venue: 'Gymnasium', bio: 'Check in, collect your ID cards, and get ready for an exciting day!' },
+  { time: '1:30 PM', name: 'Opening Ceremony', venue: 'Auditorium', bio: 'Kickoff the festival with our chief guests and a special performance.' },
+  { time: '2:15 PM', name: 'Debate (Pool -1)', venue: 'Xavier Hall', bio: 'First pool of our high-stakes tech-focused debate.' },
+  { time: '2:15 PM', name: 'Debate (Pool -2)', venue: 'Sassel Hall', bio: 'Second pool of the rigorous debate tournament.' },
+  { time: '2:30 PM', name: 'Quiz', venue: 'Auditorium', bio: 'Test your tech knowledge in our definitive school IT quiz.' },
+  { time: '2:30 PM', name: 'Robotics', venue: 'Physics Lab', bio: 'Watch custom-built robots battle it out in the arena.' },
+  { time: '2:30 PM', name: 'Sudoku(6-8)', venue: 'Reading Room', bio: 'A logic-based numbers challenge for the middle school division.' },
+  { time: '2:30 PM', name: 'Graph Art', venue: 'Computer Lab 1', bio: 'Plot beautiful art using mathematical functions and graphic tools.' },
+  { time: '2:30 PM', name: 'HTML & CSS', venue: 'Computer Lab 2', bio: 'Show off your front-end development skills by recreating mockups.' },
+  { time: '2:30 PM', name: 'FIFA', venue: "Bruylant's Hall", bio: 'Show your e-sports skills in the ultimate FIFA showdown.' },
 ];
 
 const day2Events = [
   { time: '8:00 AM', name: 'Registration', venue: 'Gymnasium', bio: 'Day 2 sign-ins for finalists and new event participants.' },
   { time: '9:00 AM', name: 'Hackathon', venue: 'Computer Lab 1', bio: 'Build an innovative app or solution in the allotted time limit.' },
   { time: '9:00 AM', name: 'Competitive Coding', venue: 'Computer Lab 2', bio: 'Algorithm challenges and data structure problem-solving.' },
-  { time: '10:00 AM', name: 'Shark Tank', venue: 'Xavier Hall', bio: 'Pitch your breakthrough tech startup ideas to our panel of judges.' },
-  { time: '10:30 AM', name: 'Game Jam', venue: 'Computer Lab 1', bio: 'Develop a playable game prototype around a secret theme.' },
+  { time: '9:30 AM', name: 'Treasure Hunt', venue: 'School Campus', bio: 'Follow the clues around the campus to find the hidden treasure.' },
+  { time: '11:00 AM', name: 'Game Jam', venue: 'Computer Lab 1', bio: 'Develop a playable game prototype around a secret theme.' },
+  { time: '12:00 PM', name: 'Math Relay', venue: 'Reading Room', bio: 'A team-based sequential math puzzle competition.' },
+  { time: '12:15 PM', name: 'Shark Tank', venue: 'Xavier Hall', bio: 'Pitch your breakthrough tech startup ideas to our panel of judges.' },
+  { time: '12:30 PM', name: 'Debate Finals', venue: 'Fr. Bruylants Hall', bio: 'The definitive clash of the best debaters from day 1.' },
   { time: '1:00 PM', name: 'LUNCH BREAK', venue: 'Classrooms', bio: 'Grab some food before the intense afternoon finals.' },
-  { time: '2:00 PM', name: 'Math Relay', venue: 'Reading Room', bio: 'A team-based sequential math puzzle competition.' },
   { time: '2:00 PM', name: 'Competitive Maths', venue: 'Computer Lab 2', bio: 'Advanced calculus and algebra challenges for the sharpest minds.' },
   { time: '2:00 PM', name: 'Data Detectives', venue: 'Physics Lab', bio: 'Parse out trends and discover the hidden patterns in massive data sets.' },
-  { time: '2:30 PM', name: 'Debate Finals', venue: 'Xavier Hall', bio: 'The definitive clash of the best debaters from day 1.' },
-  { time: '3:00 PM', name: 'Video Editing', venue: 'Reading Room', bio: 'Cut, grade, and edit raw footage into a cinematic masterpiece.' },
   { time: '4:30 PM', name: 'Closing Ceremony', venue: 'Auditorium', bio: 'Awards distribution and farewells until next year!' },
 ];
 
