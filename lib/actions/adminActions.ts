@@ -53,6 +53,15 @@ async function addEvent(prevState: { message: string; status: string } | null, f
 async function addSchool(prevState: { message: string; status: string } | null, form:FormData):Promise<{message:string, status:string}> {
     const username=form.get('username') as string
     const password=form.get('password') as string
+
+    const session=await auth.api.getSession({
+        headers: await headers()
+    })
+
+    if (!session || !(session?.user.role==="admin")) {
+            return {message: "Come back as admin", status: 'error'}
+    }
+    
     try{
         const cookieStore=await cookies()
         const allCookies=cookieStore.toString()

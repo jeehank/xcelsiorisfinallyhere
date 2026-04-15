@@ -3,6 +3,7 @@ import { useFormStatus } from "../../../lib/slug-client";
 import { authClient } from "../../../lib/auth-client";
 import { redirect } from "next/navigation";
 import {useState} from "react";
+import Spinner from '../../../src/components/Spinner'
 import {registerParticipants} from "../../../lib/actions/registration";
 
 export default function ClientForm({ event, slug, numberOfParticipants }) {
