@@ -4,7 +4,11 @@ import {PrismaPg} from "@prisma/adapter-pg"
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL })
 const PrismaClientSingleton = ()=>{
-    const ExtendedClient=new PrismaClient({adapter}).$extends({
+    const ExtendedClient=new PrismaClient({datasources: {
+      db: {
+        url: process.env.DATABASE_URL,
+      },
+    }}).$extends({
         query:{
             event:{
                 async create({model, args, query}: any){
