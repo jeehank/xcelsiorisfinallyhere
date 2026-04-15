@@ -56,7 +56,9 @@ export default function ClientForm({ event, slug, numberOfParticipants }) {
 
     if (res.success) {
 
-      await authClient.revalidate()
+      await authClient.getSession({
+	      query: { disableCookieCache: true }
+      });
       redirect('/events');
     }
     else{
