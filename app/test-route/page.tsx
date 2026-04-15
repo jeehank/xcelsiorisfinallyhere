@@ -2,7 +2,7 @@
 
 const page = () => {
   return (
-    <div>page</div>
+    <div className="mt-10">You're the chosen one!</div>
   )
 }
 

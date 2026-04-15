@@ -8,6 +8,7 @@ import {headers} from 'next/headers'
 
 
 export async function POST(request: NextRequest) {
+        return NextResponse.json({message: "Not an alllowed method"}, {status: 401})
         const {password, username } = await request.json();
         if (!password || !username) {
             return NextResponse.json({message: "Username and password are required"}, {status: 422})
