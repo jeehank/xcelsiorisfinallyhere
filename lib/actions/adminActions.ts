@@ -130,7 +130,7 @@ async function removeEvent(prevState: { message: string; status: string } | null
         if (!eventID){
             return {message:'Slug is required', status:'error'}
         }
-        const deleteUser = await prisma.event.delete({
+        const deleteUser = await prismaClient.event.delete({
             where: {
                 slug: eventID,
             },
