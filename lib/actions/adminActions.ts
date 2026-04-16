@@ -20,7 +20,7 @@ async function addEvent(prevState: { message: string; status: string } | null, f
     const overview=form.get('overview') as string
     const date=form.get('date') as string
     const time=form.get('time') as string
-    const eventDetails=form.get('details') as string
+    const eventDetails=(form.get('details') as string).split('\n').map(line=>line.trim()).filter(line=>line.length>0) // Clean up the event details
     const location=form.get('location') as string
     const NOP=Number(form.get('number') as string)
 

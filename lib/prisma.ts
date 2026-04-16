@@ -25,7 +25,7 @@ const PrismaClientSingleton = ()=>{
                     if (!slug)
                         throw new Error("Invalid event title for slug generation!");
 
-                    const details=eventDetails.split('\n')
+                    const details=eventDetails
                     const createdEvent=await query({data:{name, overview, date, time, slug, details, location, NOP}},)
 
                     return createdEvent;
