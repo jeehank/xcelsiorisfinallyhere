@@ -54,8 +54,32 @@ export default async function DynamicEventPage({ params }) {
       <Link href="/events" style={{ color: 'white', textDecoration: 'underline', marginBottom: '1rem', display: 'block' }}>
         &larr; Back to Events
       </Link>
+      
       <h1 className="events-title">{event.name}</h1>
-      <h2 className="day-title">{event.time}</h2>
+      
+      <div className="event-info-section" style={{ color: "white", marginBottom: "2rem", textAlign: "center" }}>
+        {event.overview && <p className="event-overview" style={{ fontSize: "1.2rem", maxWidth: "800px", margin: "0 auto 1.5rem" }}>{event.overview}</p>}
+        
+        <div className="event-meta" style={{ display: "flex", justifyContent: "center", gap: "2rem", margin: "1.5rem 0", flexWrap: "wrap", fontSize: "1.1rem" }}>
+          {event.date && <div><strong>Date:</strong> {event.date}</div>}
+          {event.time && <div><strong>Time:</strong> {event.time}</div>}
+          {event.location && <div><strong>Venue:</strong> {event.location}</div>}
+        </div>
+
+        <div className="event-rules" style={{ textAlign: "left", maxWidth: "600px", margin: "0 auto 2rem", background: "rgba(255,255,255,0.1)", padding: "1.5rem", borderRadius: "10px", border: "1px solid rgba(255,255,255,0.2)" }}>
+          {event.details && event.details.length > 0 && (
+            <>
+              <h3 style={{ marginBottom: "1rem", color: "var(--accent)" }}>Details & Rules</h3>
+              <ul style={{ paddingLeft: "1.5rem", marginBottom: "1rem" }}>
+                {event.details.map((detail, idx) => (
+                  <li key={idx} style={{ marginBottom: "0.5rem", lineHeight: "1.4" }}>{detail}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          <p style={{ marginTop: "1rem", color: "var(--accent)", fontWeight: "bold" }}>Team Size: {event.NOP} {event.NOP === 1 ? 'Member' : 'Members'}</p>
+        </div>
+      </div>
       
       <div className="events-form-wrapper" style={{ maxWidth: '600px', margin: '0 auto' }}>
         <ClientForm event={event} slug={slug} numberOfParticipants={event.NOP}/>
